@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
-import HighlightOffTwoToneIcon from "@mui/icons-material/HighlightOffTwoTone";
+import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import { Typography } from "@mui/material";
 
 const CartItem = () => {
@@ -12,14 +12,19 @@ const CartItem = () => {
     <Box
       sx={{
         mb: "1rem",
-        display: "flex",
-        flexDirection: "row",
-        // justifyContent: "space-between",
-        justifyItems: "center",
+
         fontWeight: "bold",
       }}
     >
-      <Stack direction={{ sm: "row" }} spacing={{ xs: 1, sm: 2, md: 4 }}>
+      <Stack
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          WebkitJustifyContent: "space-between",
+        }}
+        direction={{ sm: "row" }}
+        spacing={{ xs: 1, sm: 2, md: 4 }}
+      >
         <Stack
           direction="row"
           sx={{ display: "flex", alignItems: "center" }}
@@ -43,6 +48,8 @@ const CartItem = () => {
             style={{
               width: "2.5rem",
               textAlign: "center",
+              border: "3px solid #F2F2F2",
+              borderRadius: "5px",
               height: "2rem",
             }}
           />
@@ -60,8 +67,8 @@ const CartItem = () => {
           spacing={2}
         >
           <Typography variant="body1">$7.99</Typography>
-          <IconButton aria-label="remove" size="small">
-            <HighlightOffTwoToneIcon fontSize="small" />
+          <IconButton aria-label="remove" size="medium">
+            <HighlightOffOutlinedIcon fontSize="medium" />
           </IconButton>
         </Stack>
       </Stack>
